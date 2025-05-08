@@ -1,0 +1,44 @@
+h1{
+    font-size: 150px;
+    color: aliceblue;
+    text-align:center;
+    z-index: 1;
+}
+p{
+    font-size: 30px;
+    color: aliceblue;
+    text-align:center;
+    margin-left:  500px;
+    margin-right: 500px;
+}
+h2,h3{
+    font-size: 75px;
+    color: aliceblue;
+    text-align:center;
+    text-shadow: 10px 10px 10px rgb(219, 171, 108);
+    z-index: 1;
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://external-preview.redd.it/WtEFRvOj-46gkAfgUgGHEs6VqY15BdRKatKLA0L1340.jpg?width=1080&crop=smart&auto=webp&s=6fe5017bfac77a4af6138c264dda0a9703c6cc28");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.bb{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.219);
+
+}
