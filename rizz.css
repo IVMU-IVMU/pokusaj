@@ -1,16 +1,22 @@
-
-body {
+/* Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: sans-serif;
 }
 
+/* Sekcija 1 - siva pozadina */
 .bojasivazasekciju {
     background-color: rgba(33, 33, 33, 1);
     padding: 100px 20px;
     text-align: center;
 }
 
+/* Sekcija 2 - slika kao pozadina */
 .background {
     background-image: url("https://raw.githubusercontent.com/IVMU-IVMU//slike/main/mjesec.png");
     background-repeat: no-repeat;
@@ -21,14 +27,14 @@ body {
     text-align: center;
 }
 
-
+/* Unutarnji kontejner */
 .bb {
-    background-color: rgba(0, 0, 0, 0.5); /* opcionalno za tamni overlay */
+    background-color: rgba(0, 0, 0, 0.4); /* tamni overlay */
     padding: 50px;
     border-radius: 10px;
 }
 
-
+/* Tekst */
 h1 {
     font-size: 80px;
     color: aliceblue;
@@ -38,5 +44,4 @@ h1 {
 p {
     font-size: 30px;
     color: aliceblue;
-    margin: 0;
 }
