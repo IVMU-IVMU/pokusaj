@@ -42,3 +42,8 @@ h2,h3{
     background-color: rgba(0, 0, 0, 0.219);
 
 }
+.bojasivazasekciju{
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(33, 33, 33, 1);
+}
