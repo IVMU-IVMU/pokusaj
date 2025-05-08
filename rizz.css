@@ -19,9 +19,6 @@ h2,h3{
 }
 
 .background {
-    position: static;
-    top: 0;
-    left: 0;
     background-image: url("https://raw.githubusercontent.com/IVMU-IVMU//slike/main/mjesec.png");
     background-repeat: no-repeat;
     background-size: cover;
