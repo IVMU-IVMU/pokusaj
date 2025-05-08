@@ -29,7 +29,7 @@ h2,h3{
     background-image: url("https://raw.githubusercontent.com/IVMU-IVMU//slike/main/mjesec.png");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
 }
 .bb{
     position: absolute;
@@ -43,7 +43,5 @@ h2,h3{
 
 }
 .bojasivazasekciju{
-    background-size: cover;
-    background-position: center;
     background-color: rgba(33, 33, 33, 1);
 }
