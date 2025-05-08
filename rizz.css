@@ -24,7 +24,7 @@ h2,h3{
     left: 0;
     background-image: url("https://raw.githubusercontent.com/IVMU-IVMU//slike/main/mjesec.png");
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 100% 100%;
     background-position: center;
     background-attachment: scroll;
 }
