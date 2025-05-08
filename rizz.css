@@ -1,4 +1,3 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,42 +5,140 @@
 }
 
 body {
-    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Sekcija 1 - siva pozadina */
-.bojasivazasekciju {
-    background-color: rgba(33, 33, 33, 1);
-    padding: 100px 20px;
-    text-align: center;
+h1{
+    font-size: 4vw;
+    color: aliceblue;
+    text-align:center;
+    z-index: 3;
+}
+p{
+    font-size: 2vw;
+    color: aliceblue;
+    text-align:center;
+    z-index: 3;
+}
+h2,h3{
+    font-size: 7vw;
+    color: aliceblue;
+    text-align:center;
+    text-shadow: 10px 10px 10px rgb(219, 171, 108);
+    z-index: 1;
+    position: relative;
 }
 
-/* Sekcija 2 - slika kao pozadina */
 .background {
-    background-image: url("https://raw.githubusercontent.com/IVMU-IVMU//slike/main/mjesec.png");
-    background-repeat: no-repeat;
+    position: relative;
+    padding: 15vw;
+    width: 100%;
+    height: 100%;
+    background-image: url("mjesec.png");
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
-    padding: 100px 20px;
+    z-index: 1;
+}
+.bb{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.219);
+    z-index: 2;
+
+}
+.bojasivazasekciju{
+    padding: 2vw;
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(26, 26, 26);
     text-align: center;
+    align-items: center;
+    align-content: center;
+}
+.prijelaz{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background: linear-gradient(to bottom, rgb(26, 26, 26,1), rgba(0, 0, 0, 0.219),rgba(0, 0, 0, 0.219),rgba(0, 0, 0, 0.219),rgba(0, 0, 0, 0.219),rgba(0, 0, 0, 0.219));
+    z-index: 1;
+}
+.kutijalijeva{
+    position: relative;
+    width: 10vw;
+    width: 30vw;
+    display: inline-block;          
+    padding: 15px;                  
+    border: 2px solid rgba(25, 25, 25, 0.756);        
+    border-radius: 10px;            
+    background-color: rgba(25, 25, 25, 0.756);  
+    color: white;
+    white-space: normal;
+    z-index: 4;
+}
+/* Hamburger ikona – sada desno gore */
+.menu-icon {
+    font-size: 5vw;
+    cursor: pointer;
+    position: absolute;
+    top: 2vw;
+    right: 2vw;
+    z-index: 999;
+    color: white;
 }
 
-/* Unutarnji kontejner */
-.bb {
-    background-color: rgba(0, 0, 0, 0.4); /* tamni overlay */
-    padding: 50px;
-    border-radius: 10px;
+/* Sakrij checkbox */
+#menu-toggle {
+    display: none;
 }
 
-/* Tekst */
-h1 {
-    font-size: 80px;
-    color: aliceblue;
-    margin-bottom: 20px;
+/* Drop-down meni */
+.menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    background-color: rgb(39, 39, 39);
+    padding: 2vw;
+    border-radius: 4px;
+    z-index: 1000;
+
+    /* animacija – startna točka */
+    opacity: 0;
+    transform: translateY(-1vw);
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
 }
 
-p {
-    font-size: 30px;
-    color: aliceblue;
+/* Kad je aktivno (checkbox checked) */
+#menu-toggle:checked + .menu-icon + .menu {
+    opacity: 1;
+    transform: translateY(7vw);
+    pointer-events: auto;
 }
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin: 1vw 0;
+    font-size: 2vw;
+    transition: color 0.2s;
+}
+.menu a:hover {
+    color: #757575;
+}
+
