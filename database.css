@@ -211,15 +211,6 @@ h2,h3{
     transform: scale(1.05);
 }
 
-.prz:hover .card-description {
-    opacity: 1;
-    max-height: 10vw; 
-}
-
-.price {
-    color: #fff;
-    font-weight: bold;
-}
 a {
     color: white;
     text-decoration: none;
@@ -230,6 +221,9 @@ a {
     .prz {
         width:40vw;
         height: auto;
+    }
+        .prz:hover {
+    transform: scale(1.5);
     }
     
     .shop {
