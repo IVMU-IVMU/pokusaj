@@ -42,7 +42,14 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const cards = [
-    'v.png', 'v.png', 'v.png', 'v.png', 'v.png', 'v.png', 'v.png'
+    'monster/monster0.png', 
+    'monster/monster1.png', 
+    'monster/monster2.png', 
+    'monster/monster3.png', 
+    'monster/monster4.png', 
+    'monster/monster5.png', 
+    'monster/monster6.png', 
+    'monster/monster7.png'
   ];
 
   function getRandomCards(count = 5) {
@@ -99,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.style.display = 'none';
         overlay.style.pointerEvents = 'none';
         videoContainer.style.display = 'none';
-        showAllCards(); // <- prikazuje sve otvorene karte
+        showAllCards();
       }
     });
 
@@ -111,16 +118,13 @@ document.addEventListener('DOMContentLoaded', () => {
     allCardsContainer.style.display = 'flex';
     allCardsContainer.style.justifyContent = 'center';
     allCardsContainer.style.flexWrap = 'wrap';
-    allCardsContainer.style.gap = '12px';
+    allCardsContainer.style.gap = '16px';
     allCardsContainer.style.padding = '20px';
 
     pulledCards.forEach(src => {
       const img = document.createElement('img');
       img.src = src;
-      img.style.width = '18%';
-      img.style.maxWidth = '120px';
-      img.style.borderRadius = '8px';
-      img.style.boxShadow = '0 4px 8px rgba(0,0,0,0.3)';
+      img.classList.add('card-final');
       allCardsContainer.appendChild(img);
     });
 
