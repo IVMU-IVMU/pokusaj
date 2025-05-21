@@ -100,9 +100,23 @@
       .menu a {
         font-size: 4vw;
       }
-      .card-final {
-        width: 25%;
+
+      #final-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
       }
+
+      #final-cards img {
+        width: 40%;
+      }
+
+      #final-cards img:nth-child(5) {
+        width: 40%;
+      }
+
+
 }
 
     #pack-opening {
@@ -182,7 +196,7 @@
 }
 
 .card-final {
-  width: 30%;
+  width: 15%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);

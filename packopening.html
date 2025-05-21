@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="packopening.css">
-    <title>Strange Matter TCG</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="packopening.css" />
+  <title>Strange Matter TCG</title>
 </head>
 <body>
   <section class="bojasivazasekciju">
@@ -36,103 +35,99 @@
 
       <div id="cards-overlay"></div>
     </div>
+
+    <div id="final-cards"></div>
   </div>
-<div id="all-cards-container" style="display: none;"></div>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = [
-    'monster/monster0.png', 
-    'monster/monster1.png', 
-    'monster/monster2.png', 
-    'monster/monster3.png', 
-    'monster/monster4.png', 
-    'monster/monster5.png', 
-    'monster/monster6.png', 
-    'monster/monster7.png'
-  ];
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = [
+        "monster/monster0.png",
+        "monster/monster1.png",
+        "monster/monster2.png",
+        "monster/monster3.png",
+        "monster/monster4.png",
+        "monster/monster5.png",
+        "monster/monster6.png",
+        "monster/monster7.png",
+        "monster/monster1rare.png"
+      ];
 
-  function getRandomCards(count = 5) {
-    return [...cards].sort(() => Math.random() - 0.5).slice(0, count);
-  }
+      function getRandomCards(count = 5) {
+        return [...cards].sort(() => Math.random() - 0.5).slice(0, count);
+      }
 
-  const openBtn = document.getElementById('open-btn');
-  const videoContainer = document.getElementById('video-container');
-  const video = document.getElementById('opening-video');
-  const overlay = document.getElementById('cards-overlay');
-  const allCardsContainer = document.getElementById('all-cards-container');
+      const openBtn = document.getElementById("open-btn");
+      const videoContainer = document.getElementById("video-container");
+      const video = document.getElementById("opening-video");
+      const overlay = document.getElementById("cards-overlay");
+      const finalCards = document.getElementById("final-cards");
 
-  let pulledCards = [];
-  let currentIndex = 0;
+      let pulledCards = [];
+      let currentIndex = 0;
 
-  function reset() {
-    overlay.innerHTML = '';
-    overlay.style.display = 'none';
-    overlay.style.pointerEvents = 'none';
-    videoContainer.style.display = 'none';
-    allCardsContainer.innerHTML = '';
-    allCardsContainer.style.display = 'none';
-    currentIndex = 0;
-  }
+      function reset() {
+        overlay.innerHTML = "";
+        overlay.style.display = "none";
+        overlay.style.pointerEvents = "none";
+        videoContainer.style.display = "none";
+        finalCards.innerHTML = "";
+        finalCards.style.display = "none";
+        currentIndex = 0;
+      }
 
-  openBtn.addEventListener('click', () => {
-    reset();
-    pulledCards = getRandomCards();
-    videoContainer.style.display = 'block';
-    video.currentTime = 0;
-    video.play();
+      openBtn.addEventListener("click", () => {
+        reset();
+        pulledCards = getRandomCards();
+        videoContainer.style.display = "block";
+        video.currentTime = 0;
+        video.play();
 
-    video.onended = () => {
-      currentIndex = 0;
-      showCard(currentIndex);
-    };
-  });
+        video.onended = () => {
+          currentIndex = 0;
+          showCard(currentIndex);
+        };
+      });
 
-  function showCard(index) {
-    overlay.innerHTML = '';
-    overlay.style.display = 'flex';
-    overlay.style.pointerEvents = 'auto';
+      function showCard(index) {
+        overlay.innerHTML = "";
+        overlay.style.display = "flex";
+        overlay.style.pointerEvents = "auto";
 
-    const img = document.createElement('img');
-    img.src = pulledCards[index];
-    img.classList.add('card-appear');
-    img.style.cursor = 'pointer';
+        const img = document.createElement("img");
+        img.src = pulledCards[index];
+        img.classList.add("card-appear");
+        img.style.cursor = "pointer";
 
-    img.addEventListener('click', () => {
-      currentIndex++;
-      if (currentIndex < pulledCards.length) {
-        showCard(currentIndex);
-      } else {
-        overlay.style.display = 'none';
-        overlay.style.pointerEvents = 'none';
-        videoContainer.style.display = 'none';
-        showAllCards();
+        img.addEventListener("click", () => {
+          currentIndex++;
+          if (currentIndex < pulledCards.length) {
+            showCard(currentIndex);
+          } else {
+            overlay.style.display = "none";
+            overlay.style.pointerEvents = "none";
+            videoContainer.style.display = "none";
+            showAllCards();
+          }
+        });
+
+        overlay.appendChild(img);
+      }
+
+      function showAllCards() {
+        finalCards.innerHTML = "";
+        finalCards.style.display = "flex";
+
+        pulledCards.forEach((src) => {
+          const img = document.createElement("img");
+          img.src = src;
+          img.classList.add("card-final");
+          finalCards.appendChild(img);
+        });
+
+        openBtn.scrollIntoView({ behavior: "smooth" });
       }
     });
-
-    overlay.appendChild(img);
-  }
-
-  function showAllCards() {
-    allCardsContainer.innerHTML = '';
-    allCardsContainer.style.display = 'flex';
-    allCardsContainer.style.justifyContent = 'center';
-    allCardsContainer.style.flexWrap = 'wrap';
-    allCardsContainer.style.gap = '16px';
-    allCardsContainer.style.padding = '20px';
-
-    pulledCards.forEach(src => {
-      const img = document.createElement('img');
-      img.src = src;
-      img.classList.add('card-final');
-      allCardsContainer.appendChild(img);
-    });
-
-    openBtn.scrollIntoView({ behavior: 'smooth' });
-  }
-});
-</script>
-
-
+  </script>
 </body>
 </html>
