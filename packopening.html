@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="packopening.css">
+    <title>Strange Matter TCG</title>
+
+</head>
+<body>
+  <section class="bojasivazasekciju">
+    <div class="dropdown">
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon"> &#9776; </label>
+      <nav class="menu">
+        <a href="html.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="Carddatabase.html">Card database</a>
+        <a href="packopening.html">Pack opening</a>
+        <a href="aboutus.html">About us</a>
+      </nav>
+
+      <h1>Strange Matter TCG</h1>
+      <p>The best of the universe</p>
+    </div>
+  </section>
+
+  <div id="pack-opening">
+    <button id="open-btn">Otvori paketić</button>
+
+    <div id="video-container">
+      <video id="opening-video" playsinline>
+        <source src="0000-0420.mp4" type="video/mp4" />
+        Tvoj preglednik ne podržava video tag.
+      </video>
+
+      <div id="cards-overlay"></div>
+    </div>
+  </div>
+
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = [
+    '/monste/monster0.png', 
+    '/monste/monster1.png', 
+    '/monste/monster2.png', 
+    '/monste/monster3.png', 
+    '/monste/monster4.png', 
+    '/monste/monster5.png', 
+    '/monste/monster6.png', 
+    '/monste/monster7.png'
+  ];
+
+  function getRandomCards(count = 5) {
+    return [...cards].sort(() => Math.random() - 0.5).slice(0, count);
+  }
+
+  const openBtn = document.getElementById('open-btn');
+  const videoContainer = document.getElementById('video-container');
+  const video = document.getElementById('opening-video');
+  const overlay = document.getElementById('cards-overlay');
+
+  let pulledCards = [];
+  let currentIndex = 0;
+
+  openBtn.addEventListener('click', () => {
+    videoContainer.style.display = 'block';
+    overlay.style.display = 'none';
+    video.currentTime = 0;
+    video.play();
+
+    video.onended = () => {
+      pulledCards = getRandomCards();
+      currentIndex = 0;
+      showCard(currentIndex);
+    };
+  });
+
+  function showCard(index) {
+    overlay.innerHTML = '';
+    overlay.style.display = 'flex';
+    overlay.style.pointerEvents = 'auto';
+
+    const img = document.createElement('img');
+    img.src = pulledCards[index];
+    img.classList.add('card-appear');
+    img.style.cursor = 'pointer';
+
+
+    img.addEventListener('click', () => {
+  currentIndex++;
+  if (currentIndex < pulledCards.length) {
+    showCard(currentIndex);
+  } else {
+    overlay.style.display = 'none';
+    overlay.style.pointerEvents = 'none';
+
+    // Sakrij video nakon otvaranja svih karata
+    videoContainer.style.display = 'none';
+
+    // (Opcionalno) Scroll na gumb za ponovno otvaranje
+    openBtn.scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
+
+    overlay.appendChild(img);
+  }
+});
+</script>
+
+</body>
+</html>
