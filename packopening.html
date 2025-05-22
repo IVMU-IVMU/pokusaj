@@ -52,12 +52,14 @@
         "monster/monster7.png",
         "monster/monster8.png",
         "monster/monster9.png",
+      ];
+    const rare = [
         "monster/monster1rare.png",
         "monster/monster9full.png"
       ];
-
       function getRandomCards(count = 5) {
         return [...cards].sort(() => Math.random() - 0.5).slice(0, count);
+        return [...rare].sort(() => Math.random() - 0.5).slice(0, 5);
       }
 
       const openBtn = document.getElementById("open-btn");
