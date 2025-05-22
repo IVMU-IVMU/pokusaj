@@ -206,4 +206,9 @@
 .card-final:hover {
   transform: scale(1.05);
 }
-
+#final-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
