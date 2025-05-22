@@ -224,6 +224,7 @@ a {
     }
         .prz:hover {
     transform: scale(1.5);
+    display:flex;
     }
     
     .shop {
