@@ -62,7 +62,8 @@ h2{
 .slikica{
     z-index: 1;
     width: 50vw;
-    height: 50vw;
+    aspect-ratio: 16 / 9;
+  object-fit: cover;
     text-align: center;
 }
 .bojasivazasekciju{
