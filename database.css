@@ -134,7 +134,8 @@ a {
         width:40vw;
         height: auto;
     }
-        .prz:hover {
+    
+    .prz:hover {
     transform: scale(1.05);
     }
     
