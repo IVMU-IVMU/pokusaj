@@ -225,9 +225,11 @@ a {
         .prz:hover {
     transform: scale(1.5);
     display:flex;
+    z-index: 10;
     }
     
     .shop {
+        display:flex;
         flex-direction: row;
         align-items: center;
     }
