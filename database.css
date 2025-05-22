@@ -223,9 +223,8 @@ a {
         height: auto;
     }
         .prz:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
     display:flex;
-    z-index: 10;
     }
     
     .shop {
