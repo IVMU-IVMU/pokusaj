@@ -30,6 +30,13 @@ h2,h3{
     position: relative;
 }
 
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: DarkGrey;
+}
+
+
 .background {
     position: relative;
     padding: 15vw;
@@ -193,12 +200,6 @@ h2,h3{
     color: white;
 }
 
-footer {
-  text-align: center;
-  padding: 3px;
-  background-color: DarkGrey;
-  color: white;
-}
 
 
 #menu-toggle {
