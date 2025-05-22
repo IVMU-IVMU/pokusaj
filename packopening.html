@@ -40,99 +40,103 @@
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const cards = [
-        "monster/monster0.png",
-        "monster/monster1.png",
-        "monster/monster2.png",
-        "monster/monster3.png",
-        "monster/monster4.png",
-        "monster/monster5.png",
-        "monster/monster6.png",
-        "monster/monster7.png",
-        "monster/monster8.png",
-        "monster/monster9.png",
-      ];
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = [
+      "monster/monster0.png",
+      "monster/monster1.png",
+      "monster/monster2.png",
+      "monster/monster3.png",
+      "monster/monster4.png",
+      "monster/monster5.png",
+      "monster/monster6.png",
+      "monster/monster7.png",
+      "monster/monster8.png",
+      "monster/monster9.png",
+    ];
     const rare = [
-        "monster/monster1rare.png",
-        "monster/monster9full.png"
-      ];
-      function getRandomCards(count = 5) {
-        return [...cards].sort(() => Math.random() - 0.5).slice(0, count);
-        return [...rare].sort(() => Math.random() - 0.5).slice(0, 5);
-      }
+      "monster/monster1rare.png",
+      "monster/monster9full.png"
+    ];
 
-      const openBtn = document.getElementById("open-btn");
-      const videoContainer = document.getElementById("video-container");
-      const video = document.getElementById("opening-video");
-      const overlay = document.getElementById("cards-overlay");
-      const finalCards = document.getElementById("final-cards");
 
-      let pulledCards = [];
-      let currentIndex = 0;
+    function getRandomCards() {
+      const selectedCards = [...cards].sort(() => Math.random() - 0.5).slice(0, 4); 
+      const selectedRare = [...rare].sort(() => Math.random() - 0.5).slice(0, 1); 
+      return selectedCards.concat(selectedRare);
+    }
 
-      function reset() {
-        overlay.innerHTML = "";
-        overlay.style.display = "none";
-        overlay.style.pointerEvents = "none";
-        videoContainer.style.display = "none";
-        finalCards.innerHTML = "";
-        finalCards.style.display = "none";
+    const openBtn = document.getElementById("open-btn");
+    const videoContainer = document.getElementById("video-container");
+    const video = document.getElementById("opening-video");
+    const overlay = document.getElementById("cards-overlay");
+    const finalCards = document.getElementById("final-cards");
+
+    let pulledCards = [];
+    let currentIndex = 0;
+
+    function reset() {
+      overlay.innerHTML = "";
+      overlay.style.display = "none";
+      overlay.style.pointerEvents = "none";
+      videoContainer.style.display = "none";
+      finalCards.innerHTML = "";
+      finalCards.style.display = "none";
+      currentIndex = 0;
+    }
+
+    openBtn.addEventListener("click", () => {
+      reset();
+      pulledCards = getRandomCards(); // Pozivanje nove funkcije koja vraća 4 karte iz cards i 1 iz rare
+      videoContainer.style.display = "block";
+      video.currentTime = 0;
+      video.play();
+
+      video.onended = () => {
         currentIndex = 0;
-      }
+        showCard(currentIndex);
+      };
+    });
 
-      openBtn.addEventListener("click", () => {
-        reset();
-        pulledCards = getRandomCards();
-        videoContainer.style.display = "block";
-        video.currentTime = 0;
-        video.play();
+    function showCard(index) {
+      overlay.innerHTML = "";
+      overlay.style.display = "flex";
+      overlay.style.pointerEvents = "auto";
 
-        video.onended = () => {
-          currentIndex = 0;
+      const img = document.createElement("img");
+      img.src = pulledCards[index];
+      img.classList.add("card-appear");
+      img.style.cursor = "pointer";
+
+      img.addEventListener("click", () => {
+        currentIndex++;
+        if (currentIndex < pulledCards.length) {
           showCard(currentIndex);
-        };
+        } else {
+          overlay.style.display = "none";
+          overlay.style.pointerEvents = "none";
+          videoContainer.style.display = "none";
+          showAllCards();
+        }
       });
 
-      function showCard(index) {
-        overlay.innerHTML = "";
-        overlay.style.display = "flex";
-        overlay.style.pointerEvents = "auto";
+      overlay.appendChild(img);
+    }
 
+    function showAllCards() {
+      finalCards.innerHTML = "";
+      finalCards.style.display = "flex";
+
+      pulledCards.forEach((src) => {
         const img = document.createElement("img");
-        img.src = pulledCards[index];
-        img.classList.add("card-appear");
-        img.style.cursor = "pointer";
+        img.src = src;
+        img.classList.add("card-final");
+        finalCards.appendChild(img);
+      });
 
-        img.addEventListener("click", () => {
-          currentIndex++;
-          if (currentIndex < pulledCards.length) {
-            showCard(currentIndex);
-          } else {
-            overlay.style.display = "none";
-            overlay.style.pointerEvents = "none";
-            videoContainer.style.display = "none";
-            showAllCards();
-          }
-        });
+      openBtn.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+</script>
 
-        overlay.appendChild(img);
-      }
-
-      function showAllCards() {
-        finalCards.innerHTML = "";
-        finalCards.style.display = "flex";
-
-        pulledCards.forEach((src) => {
-          const img = document.createElement("img");
-          img.src = src;
-          img.classList.add("card-final");
-          finalCards.appendChild(img);
-        });
-
-        openBtn.scrollIntoView({ behavior: "smooth" });
-      }
-    });
-  </script>
 </body>
 </html>
