@@ -245,7 +245,7 @@ footer {
     .background,
     .background2,
     .background3 {
-        height: 60vh; 
+        height: 80vh; 
         display: flex;
         justify-content: center;
         align-items: center; 
