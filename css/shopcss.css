@@ -161,6 +161,13 @@ h2,h3{
     pointer-events: none;
     transition: all 0.3s ease-in-out;
 }
+.oznaceno{
+    color: white;
+    text-decoration: none;
+    font-size: 2vw;
+    transition: color 0.2s;
+    text-weight: bold;
+}
 
 /* Kad je aktivno (checkbox checked) */
 #menu-toggle:checked + .menu-icon + .menu {
