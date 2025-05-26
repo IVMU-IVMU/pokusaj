@@ -35,7 +35,21 @@ footer {
   color: rgb(26, 26, 26);
   text-align: center;
 }
+footer p{
+    padding: 1vw;
+    font-size: 2vw;
+    color: aliceblue;
+    text-align:center;
+    z-index: 3;
+}
 
+footer a{
+    padding: 1vw;
+    font-size: 2vw;
+    color: aliceblue;
+    text-align:center;
+    z-index: 3;
+}
 
 .background {
     position: relative;
