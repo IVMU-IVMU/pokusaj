@@ -122,7 +122,13 @@ h2,h3{
 .prz:hover {
     transform: scale(1.05);
 }
-
+.oznaceno{
+    color: white;
+    text-decoration: none;
+    font-size: 2vw;
+    transition: color 0.2s;
+    text-weight: bold;
+}
 a {
     color: white;
     text-decoration: none;
