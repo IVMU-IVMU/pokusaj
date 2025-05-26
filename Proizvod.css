@@ -1,0 +1,464 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 2vw;
+  background: linear-gradient(145deg, #0b0f2b, #111b3a);
+  color:white;
+}
+.bojasivazasekciju{
+    padding: 2vw;
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(26, 26, 26);
+    text-align: center;
+    align-items: center;
+    align-content: center;
+ }   
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90vw;
+  margin: auto;
+}
+.product-display {
+  display: flex;
+  width: 100%;
+}
+.thumbnail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  margin-right: 2vw;
+}
+.thumbnail-list img {
+  width: 5vw;
+  height: 5vw;
+  object-fit: cover;
+  cursor: pointer;
+  border: 0.2vw solid transparent;
+}
+.thumbnail-list img.active {
+  border-color: #000;
+}
+.main-image-container {
+  flex-grow: 1;
+}
+.main-image-container img {
+  width: 100%;
+  max-width: 40vw;
+}
+.product-info {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1vw;
+  max-width: 30vw;
+}
+.buy-button {
+  background-color: red;
+  color: white;
+  padding: 1vw 2vw;
+  border: none;
+  font-size: 1.2vw;
+  cursor: pointer;
+}
+.description {
+  margin: 0; 
+  font-size: 1vw;
+  line-height: 1.5;
+}
+.recommendations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+  padding: 2vw;
+}
+.recommendations a {
+  width: 10vw;
+  height: 10vw;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  border-radius: 1vw;
+}
+.prz {
+  border: 0.2vw solid #303030;
+  border-radius: 1vw;
+  width: 18vw;
+  height: auto;
+  background-color: #303030;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 1vw;
+}
+.main-image-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-image-info img {
+  width: 100%;
+  max-width: 40vw;
+}
+.product-info {
+  margin-top: 1vw;
+  text-align: center;
+}
+
+.main-image-info {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Align top */
+  gap: 2vw;
+}
+.main-image-info img {
+  width: 100%;
+  max-width: 40vw;
+}
+.product-info {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Stack name and button from top */
+  gap: 1vw;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.card-info {
+  text-align: center;
+  padding: 0.5vw;
+}
+.card-description {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  padding: 0 1vw;
+  text-align: center;
+  font-size: 1vw;
+  color: #ccc;
+}
+.prz:hover {
+  transform: scale(1.05);
+}
+.prz:hover .card-description {
+  opacity: 1;
+  max-height: 8vw;
+}
+.price {
+  color: #fff;
+  font-weight: bold;
+}
+
+
+
+footer {
+  padding: 2vw;
+  text-align: center;
+  background: linear-gradient(145deg, #0b0f2b, #111b3a);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  font-family: Arial, sans-serif;
+}
+
+
+.footer-icons {
+  display: flex;
+  gap: 1.5em;
+  justify-content: center;
+}
+
+.footer-icons a {
+  color: white;
+  font-size: 1.5em;
+  transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #00bcd4;
+}
+
+.footer-contact {
+  font-size: 1em;
+}
+
+.footer-contact a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-copy {
+  font-size: 0.9em;
+  opacity: 0.7;
+}
+h1{
+    font-size: 4vw;
+    color: aliceblue;
+    text-align:center;
+    z-index: 3;
+}
+p{
+    font-size: 2vw;
+    color: aliceblue;
+    text-align:center;
+    z-index: 3;
+}
+h2,h3{
+    font-size: 2vw;
+    color: aliceblue;
+    text-align:center;
+    z-index: 1;
+    position: relative;
+}
+
+.background {
+    position: relative;
+    padding: 15vw;
+    width: 70vw;
+    height: 70vw;
+    height: auto;
+    width:auto;
+    background-image: url("mjesec.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    z-index: 1;
+}
+.background2 {
+    position: relative;
+    padding: 15vw;
+    width: 70vw;
+    height: 70vw;
+    height: auto;
+    width:auto;
+    background-image: url("svemir.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    z-index: 1;
+}
+.background3 {
+    position: relative;
+    padding: 15vw;
+    width: 70vw;
+    height: 70vw;
+    height: auto;
+    width:auto;
+    background-image: url("star.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    z-index: 1;
+}
+.bb{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.219);
+    z-index: 2;
+
+}
+.bojasivazasekciju{
+    padding: 2vw;
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(26, 26, 26);
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+.prijelazd{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background: linear-gradient(to bottom, rgb(26, 26, 26,1), rgba(0, 0, 0, 0.219),rgba(0, 0, 0, 0.219),rgba(0, 0, 0, 0.219),rgba(0, 0, 0, 0.219),rgba(0, 0, 0, 0.219));
+    z-index: 1;
+}
+.prijelazg{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background: linear-gradient(to top, rgb(26, 26, 26,1), rgba(0, 0, 0, 0.219),rgba(0, 0, 0, 0.219),rgba(0, 0, 0, 0.219),rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0));
+    z-index: 1;
+}
+.bojasivazasekciju{
+    padding: 2vw;
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(26, 26, 26);
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+/* Hamburger ikona – sada desno gore */
+.menu-icon {
+    font-size: 5vw;
+    cursor: pointer;
+    position: absolute;
+    top: 2vw;
+    right: 2vw;
+    z-index: 999;
+    color: white;
+}
+
+/* Sakrij checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Drop-down meni */
+.menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    background-color: rgb(39, 39, 39);
+    padding: 2vw;
+    border-radius: 4px;
+    z-index: 1000;
+
+    /* animacija – startna točka */
+    opacity: 0;
+    transform: translateY(-1vw);
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+.oznaceno{
+    color: white;
+    text-decoration: none;
+    font-size: 2vw;
+    transition: color 0.2s;
+    text-weight: bold;
+}
+
+/* Kad je aktivno (checkbox checked) */
+#menu-toggle:checked + .menu-icon + .menu {
+    opacity: 1;
+    transform: translateY(7vw);
+    pointer-events: auto;
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin: 1vw 0;
+    font-size: 2vw;
+    transition: color 0.2s;
+}
+.menu a:hover {
+    color: #757575;
+}
+
+@media (max-width: 768px) {
+  .product-display {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .thumbnail-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 0;
+    margin-bottom: 2vw;
+  }
+
+  .thumbnail-list img {
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .main-image-container img {
+    max-width: 80vw;
+  }
+
+  .product-info {
+    margin-left: 0;
+    text-align: center;
+    margin-top: 2vw;
+  }
+
+  .buy-button {
+    font-size: 3.5vw;
+    padding: 2vw 4vw;
+  }
+
+  .recommendations a {
+    width: 25vw;
+    height: 25vw;
+    font-size: 3vw;
+  }
+  .product-info {
+  max-width: 80vw;
+  align-items: center;
+}
+
+.product-info h2 {
+  font-size: 4vw;
+  text-align: center;
+}
+
+.description {
+  font-size: 3.5vw;
+  text-align: center;
+}
+ .prz {
+    width: 90vw;
+    padding: 4vw 2vw;
+  }
+
+  .card-description {
+    font-size: 3.5vw;
+    max-height: none;
+  }
+
+  .card-info h3 {
+    font-size: 5vw;
+  }
+
+  .price {
+    font-size: 4vw;
+  }
+}
+
