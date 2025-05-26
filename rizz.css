@@ -31,9 +31,13 @@ h2,h3{
 }
 
 footer {
+  padding: 2vw;
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(26, 26, 26);
   text-align: center;
-  padding: 3px;
-  background-color: DarkGrey;
+  align-items: center;
+  align-content: center;
 }
 
 
