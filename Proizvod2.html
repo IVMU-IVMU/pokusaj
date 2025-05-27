@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ime Proizvoda</title>
+  <link rel="stylesheet" href="Proizvod.css">
+</head>
+<body>
+    <section class="bojasivazasekciju">
+        <div class="dropdown">
+    	    <input type="checkbox" id="menu-toggle" />
+            <label for="menu-toggle" class="menu-icon"> &#9776; </label>
+            <nav class="menu">
+                <a href="index.html">Home</a>
+                <a class="oznaceno" href="shop.html">Shop</a>
+                <a href="Carddatabase.html">Card database</a>
+                <a href="packopening.html">Pack opening</a>
+                <a href="rules.html">Rules</a>
+                <a href="aboutus.html">About us</a>
+            </nav>
+            
+            <h1>Strange Matter TCG</h1>
+            <h2>The best of the universe</h2>
+    </section>
+  <div class="container">
+    <div class="product-display">
+      <div class="thumbnail-list">
+        <img src="proizvodi/1/karta1.jpg" alt="thumb1" onclick="changeImage(this)" />
+        <img src="proizvodi/1/karta2.jpg" alt="thumb2" onclick="changeImage(this)" />
+        <img src="proizvodi/1/karta3.jpg" alt="thumb3" onclick="changeImage(this)" />
+        <img src="proizvodi/1/karta4.jpg" alt="thumb4" onclick="changeImage(this)" />
+      </div>
+     <div class="main-image-info">
+  <img id="mainImage" src="proizvodi/1/karta1.jpg" alt="main" />
+  <div class="product-info">
+    <h2>Product Name</h2>
+    <button class="buy-button">Buy Now</button>
+    <div class="description">
+      <p>This is the description of the product. Write features, sizes, material, etc.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="recommendations">
+ 
+</div>
+
+  </div>
+
+  <script>
+    function changeImage(el) {
+      const mainImg = document.getElementById('mainImage');
+      mainImg.src = el.src;
+      document.querySelectorAll('.thumbnail-list img').forEach(img => img.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<footer>
+  <div class="footer-icons">
+    <a href="https://www.instagram.com/strangematter666?igsh=MTdweTlxd2U0a3FpNw==" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@strange.matter666?_t=ZN-8wgHiXQbSFi&_r=1" target="_blank" aria-label="TikTok">
+      <i class="fab fa-tiktok"></i>
+    </a>
+  </div>
+
+  <div class="footer-contact">
+    Contact: <a href="mailto:ivvmuu@gmail.com">ivvmuu@gmail.com</a>
+  </div>
+
+  <div class="footer-copy">
+    © 2025 Strange Matter - TCG & Accessories Cookers. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
