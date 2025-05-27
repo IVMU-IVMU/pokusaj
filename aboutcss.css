@@ -23,6 +23,15 @@ p{
     text-align:center;
     z-index: 3;
 }
+
+.oznaceno{
+    color: white;
+    text-decoration: none;
+    font-size: 2vw;
+    transition: color 0.2s;
+    font-weight: bold;
+}
+
 .lijevo{
     font-size: 2vw;
     color: aliceblue;
