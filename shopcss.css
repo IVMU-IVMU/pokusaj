@@ -10,6 +10,8 @@ body {
     background-color: rgb(26, 26, 26);
 }
 
+
+
 h1{
     font-size: 4vw;
     color: aliceblue;
@@ -28,6 +30,14 @@ h2,h3{
     text-align:center;
     z-index: 1;
     position: relative;
+}
+
+.oznaceno{
+    color: white;
+    text-decoration: none;
+    font-size: 2vw;
+    transition: color 0.2s;
+    font-weight: bold;
 }
 
 .background {
