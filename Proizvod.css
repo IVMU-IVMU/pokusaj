@@ -1,9 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 2vw;
-  background: linear-gradient(145deg, #0b0f2b, #111b3a);
-  color:white;
+    margin: 0;
+    padding: 0;
 }
 .bojasivazasekciju{
     padding: 2vw;
