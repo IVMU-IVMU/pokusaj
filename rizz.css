@@ -288,7 +288,12 @@ footer {
 .menu a:hover {
     color: #757575;
 }
-
+.slika{
+    display:flex;
+    left:0;
+    width:15vw;
+    height:15vw;
+}
 @media (max-width: 768px) {
     .background,
     .background2,
