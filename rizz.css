@@ -294,8 +294,8 @@ footer {
     display: flex;
     flex-direction: column;
     position: absolute;
-    width:14vw;
-    height:13vw;
+    width:13vw;
+    height:14vw;
     z-index: 1000;
     flex-direction: column;
 }
